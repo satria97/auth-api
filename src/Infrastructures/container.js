@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-const createContainer = require('instances-container');
+const { createContainer } = require('instances-container');
 
 // External agency
 const { nanoid } = require('nanoid');
@@ -53,6 +53,7 @@ container.register([
 		key: AddUserUseCase.name,
 		Class: AddUserUseCase,
 		parameter: {
+			injectType: 'destructuring',
 			dependencies: [
 				{
 					name: 'userRepository',
