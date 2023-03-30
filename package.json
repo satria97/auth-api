@@ -19,6 +19,7 @@
 		"@hapi/jwt": "^3.2.0",
 		"bcrypt": "^5.1.0",
 		"dotenv": "^16.0.3",
+		"instances-container": "^2.0.6",
 		"nanoid": "^4.0.2",
 		"pg": "^8.10.0"
 	},
