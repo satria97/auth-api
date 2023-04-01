@@ -1,12 +1,15 @@
-const PasswordHash = require('../PasswordHash');
+const EncryptionHelper = require('../PasswordHash');
 
-describe('PasswordHash interface', () => {
+describe('EncryptionHelper interface', () => {
 	it('should throw error when invoke abstract behavior', async () => {
 		// Arrange
-		const passwordHash = new PasswordHash();
+		const encryptionHelper = new EncryptionHelper();
 
 		// Action and Assert
-		await expect(passwordHash.hash('dummy_password')).rejects.toThrowError(
+		await expect(encryptionHelper.hash('dummy_password')).rejects.toThrowError(
+			'PASSWORD_HASH.METHOD_NOT_IMPLEMENTED'
+		);
+		await expect(encryptionHelper.comparePassword('plain', 'encrypted')).rejects.toThrowError(
 			'PASSWORD_HASH.METHOD_NOT_IMPLEMENTED'
 		);
 	});
